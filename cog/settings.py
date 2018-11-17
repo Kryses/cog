@@ -138,4 +138,6 @@ for package in INSTALLED_APPS:
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package={}'.format(','.join(test_packages)),
+    '--with-doctest',
+    '--cover-min-percentage=80'
 ]
