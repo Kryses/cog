@@ -2,7 +2,7 @@
 from django.db import IntegrityError
 
 from cog.base_classes.test_classes import UserProjectBaseClass
-from pipelines.models import PipelineTemplate, Status, Task, TaskTemplate, Workflow, WorkflowTemplate, Pipeline
+from pipelines.models import Pipeline, PipelineTemplate, Status, Task, TaskTemplate, Workflow, WorkflowTemplate
 
 
 class TestPipeline(UserProjectBaseClass):

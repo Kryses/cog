@@ -1,4 +1,5 @@
-from cog.settings import *
+import os
+from cog.settings import BASE_DIR
 
 DATABASES = {
     'default': {

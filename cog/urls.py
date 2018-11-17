@@ -1,8 +1,7 @@
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
-
 
 from cog import views
 from projects.views import ProjectViewSet

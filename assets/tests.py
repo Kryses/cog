@@ -1,8 +1,4 @@
-from django.test import TestCase
-
 # Create your tests here.
-from assets.models import AssetType
-from cog.base_classes.test_classes import UserProjectBaseClass
 
 
 # class TestAssetModel(UserProjectBaseClass):
