@@ -8,7 +8,7 @@ from projects.models import ProjectMixin
 
 class NotesMixin(models.Model):
     """Apply a notes field to any model."""
-    notes = models.ManyToManyField('notes.Notes', related_name='%(class)s_notes', null=True)
+    notes = models.ManyToManyField('notes.Note', related_name='%(class)s_notes', null=True)
 
     class Meta:
         abstract = True

@@ -8,7 +8,7 @@ DEFAULT_STATUS = 1
 
 class StatusMixin(models.Model):
     """Applies and status column to any model."""
-    status = models.ForeignKey('Status', on_delete=models.SET_DEFAULT, null=False, default=DEFAULT_STATUS)
+    status = models.ForeignKey('pipelines.Status', on_delete=models.SET_DEFAULT, null=False, default=DEFAULT_STATUS)
 
     class Meta:
         abstract = True
