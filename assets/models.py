@@ -8,8 +8,7 @@ from projects.models import ProjectMixin
 
 
 class Asset(BaseModel, StatusMixin, ProjectMixin, NotesMixin):
-    asset_type = models.ForeignKey('assets.AssetType')
-
+    asset_type = models.ForeignKey('assets.AssetType', on_delete=models.SET_NULL, null=True)
 
 
 class AssetType(BaseModel, ProjectMixin):
