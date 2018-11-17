@@ -1,0 +1,8 @@
+[run]
+omit =
+    *models.py
+    *admin.py
+[report]
+omit =
+    *models.py
+    *admin.py
