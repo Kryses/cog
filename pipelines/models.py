@@ -6,6 +6,7 @@ from projects.models import ProjectMixin
 
 DEFAULT_STATUS = 1
 
+
 class StatusMixin(models.Model):
     """Applies and status column to any model."""
     status = models.ForeignKey('pipelines.Status', on_delete=models.SET_DEFAULT, null=False, default=DEFAULT_STATUS)

@@ -1,0 +1,5 @@
+[flake8]
+ignore = F403,E203,F405,W292
+exclude = */migrations/*
+max-line-length = 120
+

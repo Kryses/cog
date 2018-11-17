@@ -12,7 +12,6 @@ class TestPipeline(UserProjectBaseClass):
         self.status = Status.objects.create(name='ready', project=self.project)
         self.pipeline = Pipeline.objects.create(name='Test', project=self.project, status=self.status)
 
-
     def test_status(self):
         self.assertEquals(self.pipeline.status.name, 'ready')
 
@@ -80,7 +79,6 @@ class TestWorkflow(UserProjectBaseClass):
         task_objects = Task.objects.filter(name__in=task_names)
         self.workflow.tasks.add(*task_objects)
         self.assertEquals(list(self.workflow.tasks.values_list('name', flat=True)), task_names)
-
 
 
 class TestTask(UserProjectBaseClass):
