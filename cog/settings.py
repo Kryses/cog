@@ -129,3 +129,19 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+standard_packages = ['django', 'rest_framework']
+test_packages = []
+for package in INSTALLED_APPS:
+    standard_package = False
+    for standard in standard_packages:
+        if standard in package:
+            standard_package = True
+    if not standard_package:
+        test_packages.append(package)
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package={}'.format(','.join(test_packages)),
+]
