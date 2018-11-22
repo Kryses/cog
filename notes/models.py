@@ -8,7 +8,7 @@ from projects.models import ProjectMixin
 
 class NotesMixin(models.Model):
     """Apply a notes field to any model."""
-    notes = models.ManyToManyField('notes.Note', related_name='%(class)s_notes', null=True)
+    notes = models.ManyToManyField('notes.Note', related_name='%(class)s_notes')
 
     class Meta:
         abstract = True
@@ -16,7 +16,7 @@ class NotesMixin(models.Model):
 
 class CommentsMixin(models.Model):
     """Apply a notes field to any model."""
-    comments = models.ManyToManyField('notes.Comment', related_name='%(class)s_comments', null=True)
+    comments = models.ManyToManyField('notes.Comment', related_name='%(class)s_comments')
 
     class Meta:
         abstract = True
