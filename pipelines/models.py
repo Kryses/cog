@@ -7,6 +7,22 @@ from projects.models import ProjectMixin
 DEFAULT_STATUS = 1
 
 
+class PipelineMixin(models.Model):
+    """Applies the pipeline column to any model."""
+    pipeline = models.ForeignKey('pipelines.Pipeline', on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        abstract = True
+
+
+class PipelinesMixin(models.Model):
+    """Applies the pipeline column to any model."""
+    pipelines = models.ManyToManyField('pipelines.Pipeline', null=True, related_name='%(class)s_pipelines')
+
+    class Meta:
+        abstract = True
+
+
 class StatusMixin(models.Model):
     """Applies and status column to any model."""
     status = models.ForeignKey('pipelines.Status', on_delete=models.SET_DEFAULT, null=False, default=DEFAULT_STATUS)
